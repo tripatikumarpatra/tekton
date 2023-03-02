@@ -14,3 +14,15 @@ spec:
   type: NodePort 
   selector:
     app: states
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: login-app
+spec:
+  selector:
+    app: login-app
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: NodePort
