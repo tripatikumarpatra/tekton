@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: login-app
-        image: kulbhushanmayer/tomcat:java-app-2
+        image: kulbhushanmayer/tomcat:latest_rl_9
         resources:
           requests:
             memory: "50Mi"
