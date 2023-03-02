@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: login-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: login-app
+  template:
+    metadata:
+      labels:
+        app: login-app
+    spec:
+      containers:
+      - name: login-app
+        image: kulbhushanmayer/tomcat:java-app-2
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "40m"
+          limits:
+            memory: "100Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 8080
