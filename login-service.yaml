@@ -1,16 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
-  labels:
-    app.kubernetes.io/instance: java-app
   name: login-app
-  namespace: java-app
 spec:
-  ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
-  type: NodePort  
   selector:
     app: login-app
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: NodePort
