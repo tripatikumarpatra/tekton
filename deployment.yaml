@@ -1,18 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java-sample-app
+  name: java-application
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: java-sample-app
+      app: states
   template:
     metadata:
       labels:
-        app: java-sample-app
+        app: states
     spec:
       containers:
-      - name: java-sample-app
+      - name: states
         image: kulbhushanmayer/kaniko:latest
         resources:
           limits:
